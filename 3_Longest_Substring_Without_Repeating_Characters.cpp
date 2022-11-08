@@ -9,6 +9,8 @@ As with move ahead with j pointer over the string, i pointer with keep track of 
 Put every char you encounter at ith pos into hash map. And cheak if upcoming char is allready inside the hash
 map or not. If you encounter any duplicates, just move your i pointer by 1, also remove previous ith char from 
 hash map. And store the length of substrin as j-i+1. find the max of all the substring which don't have the duplicates.
+TC: O(N)
+SC: O(N)
 */
 class Solution {
 public:
@@ -35,3 +37,19 @@ public:
 };
 
 // ======================= Another Optimised Approach =============================
+/*
+In this approach create a hashmap as list (char hash[256] = {}) that will store the location of any char in char
+TC: O(N)
+SC: O(1)
+*/
+int lengthOfLongestSubstring(string s) {
+        vector<int> dict(256, -1);
+        int maxLen = 0, start = -1;
+        for (int i = 0; i != s.length(); i++) {
+            if (dict[s[i]] > start)
+                start = dict[s[i]];
+            dict[s[i]] = i;
+            maxLen = max(maxLen, i - start);
+        }
+        return maxLen;
+    }
