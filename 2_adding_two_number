@@ -1,0 +1,45 @@
+// LeetCode: 2. Add Two Numbers
+// Link: https://leetcode.com/problems/add-two-numbers
+
+
+/*
+Simple Intuition:
+Intialize with a carry equals zero. And traverse though the list
+if even any of the list remains or carry is not eqals to zero.
+If any of the list ends then assing the next pointer a null and if
+any pointer is null then assign it's value as zero.
+TC: O(N)
+SC: O(0)
+Note: But to store the output we need O(N) space
+*/
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode* dummyHead = new ListNode(0);
+        ListNode* curr = dummyHead;
+        int carry = 0;
+        while (l1 != NULL || l2 != NULL || carry != 0) {
+            int x = l1 ? l1->val : 0;
+            int y = l2 ? l2->val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr->next = new ListNode(sum % 10);
+            curr = curr->next;
+            l1 = l1 ? l1->next : nullptr;
+            l2 = l2 ? l2->next : nullptr;
+        }
+        return dummyHead->next;
+    }
+};
