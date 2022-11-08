@@ -1,7 +1,6 @@
 // LeetCode: 2. Add Two Numbers
 // Link: https://leetcode.com/problems/add-two-numbers
 
-
 /*
 Simple Intuition:
 Intialize with a carry equals zero. And traverse though the list
