@@ -5,6 +5,8 @@
 /*
 Note that question have a lot of eadge cases.
 This solution is brut-force.
+TC: O(N)
+SC: O(N)
 */
 class Solution {
 public:
