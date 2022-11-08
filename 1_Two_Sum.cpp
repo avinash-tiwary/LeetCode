@@ -4,6 +4,7 @@
 /*
 For each element in array traverse through the array again with nested loop.
 It requires two loop;
+
 TC: O(N^2)
 SC: O(1)
 */
@@ -15,6 +16,9 @@ Traverse through the array and store the each element and it's index you come ac
 Also keep looking for an element equal to target - current element in the hash map.
 If you found this element return current index and the index of the element found in 
 hash map.
+
+TC: O(N)
+SC: O(N)
 */
 
 class Solution {
