@@ -16,6 +16,8 @@ counting the index of each number as if they are merged and sorted. Compare the 
 and then smaller one get the lower count, and then moving the pointer ahead by one, in the array with smaller element.
 If any of the arrays get over then solely itereate over the array which is left over. Also noting that if length of (M+N)
 is even then we need to take the average of the two middle element. otherwise return the middle element.
+TC: O(N+M)
+SC: O(1)
 */
 
 class Solution {
