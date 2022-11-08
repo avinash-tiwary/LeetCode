@@ -38,18 +38,26 @@ public:
 
 // ======================= Another Optimised Approach =============================
 /*
-In this approach create a hashmap as list (char hash[256] = {}) that will store the location of any char in char
+In this approach create a hashmap as list (char hash[256] = {-1}) that will store the location of any char in char.
+And updating the index of char at it's place. And also updating the startin of substring. Whenever we see that position
+of any char which is greater than the starting position than means we ancountered the duplicate, then shift the starting 
+ahead of the last postion so duplicate is out.
 TC: O(N)
 SC: O(1)
+Here we use a hashmap of constant size 256 irrespective of the length of string.
 */
-int lengthOfLongestSubstring(string s) {
-        vector<int> dict(256, -1);
-        int maxLen = 0, start = -1;
-        for (int i = 0; i != s.length(); i++) {
-            if (dict[s[i]] > start)
-                start = dict[s[i]];
-            dict[s[i]] = i;
-            maxLen = max(maxLen, i - start);
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        vector<int>hash(256, -1);
+        int start = -1, maxLen = 0;
+        for(int i = 0; i < s.length(); i++) {
+            if(hash[s[i]] > start)
+                start = hash[s[i]];
+            hash[s[i]] = i;
+            maxLen = max(maxLen, i-start);
         }
         return maxLen;
     }
+};
