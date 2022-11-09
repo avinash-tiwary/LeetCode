@@ -12,7 +12,7 @@ So index of that warmer day (on top of stack) minus today's index is the day you
 Now insert today's date in the stack as top element as pair: pair <today's temp, today's index>.
 If we have top element of stack as colder day or equal temp as of today then pop the top till you either get warmer day or empty stack.
 If you get warmer day then that will be the next warmer day but if you get empty stack then you don't get any warmer day ahead.
-TC: O(N)
+TC: O(N)  :Because while loop is not running for n times it will only run for very few times. And ofcourse O(N) is approx TC.
 SC: O(N)
 */
 
