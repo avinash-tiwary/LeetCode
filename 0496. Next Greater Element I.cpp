@@ -21,7 +21,7 @@ Iterate over the nums2 array and do the following steps:
    get the top element as greater than current element or stack is empty. 
 5. And update the map as rule no. 2 & 3.
 6. Now we can itterate over the nums1 (subset array) and then we can return the answer.
-TC: O(N)
+TC: O(N) : Because while loop is not running for n times it will only run for very few times. And ofcourse O(N) is approx TC.
 SC: O(N)
 */
 
